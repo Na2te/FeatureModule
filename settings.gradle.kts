@@ -19,6 +19,10 @@ dependencyResolutionManagement {
     }
 }
 
+// projects.모듈.~ 꼴로 바로 imple 하기 위한 설정
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "FeatureModule"
 include(":app")
- 
+include(":feature:start")
+include(":feature:second")
