@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.feature.start)
+    implementation(projects.feature.second)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

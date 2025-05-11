@@ -27,9 +27,19 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
+    // compose 관련 라이브러리 버전들을 관리할 수 있는 bom
+    val composeBom = platform(libs.androidx.compose.bom)
+    // 이걸 쓰면 라이브러리의 버전을 명시하지 않아도 bom에서 관리한다
+    api(composeBom)
+    // 네비게이션을 위한 라이브러리
+    api(libs.androidx.compose.navigation)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
