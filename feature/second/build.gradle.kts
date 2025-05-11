@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "com.na2te.second"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 25
@@ -37,9 +39,12 @@ dependencies {
     // compose 관련 라이브러리 버전들을 관리할 수 있는 bom
     val composeBom = platform(libs.androidx.compose.bom)
     // 이걸 쓰면 라이브러리의 버전을 명시하지 않아도 bom에서 관리한다
-    api(composeBom)
+    implementation(composeBom)
     // 네비게이션을 위한 라이브러리
     api(libs.androidx.compose.navigation)
+    api(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.tooling.preview)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

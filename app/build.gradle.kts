@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.na2te.featuremodule"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.na2te.featuremodule"
